@@ -9,20 +9,16 @@
 <link rel="icon" type="image/png" href="monogram-hq.png">
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="TranzKit - Smart Mobility, Simplified. End-to-End Transit Solutions for a Seamless Future. Transform urban mobility with intelligent, integrated transportation management.">
+<meta name="description" content="TranzKit - Smart Mobility, Simplified. End-to-End Transit Solutions for a Seamless Future.">
 <meta name="keywords" content="smart mobility, transit solutions, transportation management, fleet optimization, ride-hailing, TranzKit">
 <meta name="author" content="TranzKit">
 
 <!-- Open Graph Meta Tags for Social Media -->
 <meta property="og:title" content="TranzKit - Smart Mobility, Simplified">
-<meta property="og:description" content="End-to-End Transit Solutions for a Seamless Future. Transform urban mobility with intelligent, integrated transportation management.">
+<meta property="og:description" content="Transform urban mobility with intelligent, integrated transportation management.">
 <meta property="og:image" content="https://public.readdy.ai/ai/img_res/6638c5215067a019968fcc95e8600089.jpg">
 <meta property="og:url" content="https://tranzkit.com">
 <meta property="og:type" content="website">
-
-<!-- Preconnect for Performance Optimization -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <!-- Google Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -30,33 +26,8 @@
 
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-    theme: {
-        extend: {
-            colors: {
-                primary: '#405DFF',
-                secondary: '#64748B'
-            },
-            borderRadius: {
-                'none': '0px',
-                'sm': '4px',
-                DEFAULT: '8px',
-                'md': '12px',
-                'lg': '16px',
-                'xl': '20px',
-                '2xl': '24px',
-                '3xl': '32px',
-                'full': '9999px',
-                'button': '8px'
-            }
-        }
-    }
-}
-</script>
 
 <style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
 .gradient-bg {
     background: linear-gradient(135deg, #405DFF 0%, #6B82FF 100%);
 }
@@ -600,17 +571,11 @@ Transforming urban mobility with intelligent transit solutions.
 </footer>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const navLinks = {
-        "products": "products",
-        "services": "services",
-        "about": "about",
-        "contact": "contact"
-    };
-
+    // Smooth scrolling for navigation
     document.querySelectorAll("a[href^='#']").forEach(anchor => {
         anchor.addEventListener("click", function(e) {
             e.preventDefault();
-            const targetId = navLinks[this.getAttribute("href").substring(1)];
+            const targetId = this.getAttribute("href").substring(1);
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
                 window.scrollTo({
@@ -620,86 +585,61 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-});
-mainTabs.forEach(tab => {
-tab.addEventListener('click', () => {
-const target = tab.dataset.main;
-mainTabs.forEach(t => {
-if (t === tab) {
-t.classList.add('bg-primary', 'text-white');
-t.classList.remove('bg-gray-100', 'text-gray-600');
-} else {
-t.classList.remove('bg-primary', 'text-white');
-t.classList.add('bg-gray-100', 'text-gray-600');
-}
-});
-if (target === 'passengers') {
-passengerTabsContainer.classList.remove('hidden');
-cargoTabsContainer.classList.add('hidden');
-document.querySelector('.transit-tab.active').click();
-} else {
-passengerTabsContainer.classList.add('hidden');
-cargoTabsContainer.classList.remove('hidden');
-document.querySelector('.cargo-tab.active').click();
-}
-});
-});
-transitTabs.forEach(tab => {
-tab.addEventListener('click', () => {
-const target = tab.dataset.tab;
-transitTabs.forEach(t => {
-if (t === tab) {
-t.classList.add('bg-primary', 'text-white');
-t.classList.remove('bg-gray-100', 'text-gray-600');
-} else {
-t.classList.remove('bg-primary', 'text-white');
-t.classList.add('bg-gray-100', 'text-gray-600');
-}
-});
-transitContents.forEach(content => {
-if (content.id === target) {
-content.classList.remove('hidden');
-} else {
-content.classList.add('hidden');
-}
-});
-cargoContents.forEach(content => {
-content.classList.add('hidden');
-});
-});
-});
-cargoTabs.forEach(tab => {
-tab.addEventListener('click', () => {
-const target = tab.dataset.tab;
-cargoTabs.forEach(t => {
-if (t === tab) {
-t.classList.add('bg-primary', 'text-white');
-t.classList.remove('bg-gray-100', 'text-gray-600');
-} else {
-t.classList.remove('bg-primary', 'text-white');
-t.classList.add('bg-gray-100', 'text-gray-600');
-}
-});
-cargoContents.forEach(content => {
-if (content.id === target) {
-content.classList.remove('hidden');
-} else {
-content.classList.add('hidden');
-}
-});
-transitContents.forEach(content => {
-content.classList.add('hidden');
-});
-});
-});
-});
-window.addEventListener("scroll", function() {
-document.querySelectorAll("section").forEach(section => {
-const rect = section.getBoundingClientRect();
-if (rect.top < window.innerHeight - 50) {
-section.classList.add("visible");
-}
-});
+
+    // Select all necessary elements
+    const mainTabs = document.querySelectorAll(".main-tab");
+    const transitTabs = document.querySelectorAll(".transit-tab");
+    const cargoTabs = document.querySelectorAll(".cargo-tab");
+    const passengerTabsContainer = document.getElementById("passengers-tabs");
+    const cargoTabsContainer = document.getElementById("cargo-tabs");
+    const transitContents = document.querySelectorAll(".transit-content");
+    const cargoContents = document.querySelectorAll(".cargo-content");
+
+    if (mainTabs.length > 0) {
+        mainTabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                const target = tab.dataset.main;
+
+                mainTabs.forEach(t => {
+                    t.classList.toggle('bg-primary', t === tab);
+                    t.classList.toggle('text-white', t === tab);
+                    t.classList.toggle('bg-gray-100', t !== tab);
+                    t.classList.toggle('text-gray-600', t !== tab);
+                });
+
+                if (target === "passengers") {
+                    passengerTabsContainer.classList.remove("hidden");
+                    cargoTabsContainer.classList.add("hidden");
+                    document.querySelector(".transit-tab.active")?.click();
+                } else {
+                    passengerTabsContainer.classList.add("hidden");
+                    cargoTabsContainer.classList.remove("hidden");
+                    document.querySelector(".cargo-tab.active")?.click();
+                }
+            });
+        });
+    }
+
+    transitTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            transitContents.forEach(content => content.classList.toggle("hidden", content.id !== tab.dataset.tab));
+        });
+    });
+
+    cargoTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            cargoContents.forEach(content => content.classList.toggle("hidden", content.id !== tab.dataset.tab));
+        });
+    });
+
+    // Scroll effect
+    window.addEventListener("scroll", function() {
+        document.querySelectorAll("section").forEach(section => {
+            if (section.getBoundingClientRect().top < window.innerHeight - 50) {
+                section.classList.add("visible");
+            }
+        });
+    });
 });
 </script>
 </body>
