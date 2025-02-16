@@ -113,7 +113,7 @@ Book a Demo
 </div>
 </div>
 </section>
-<section id="solutions" class="py-20">
+<section id="products-section" class="py-20">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-16">
 <h2 class="text-3xl font-bold text-gray-900 mb-4">
@@ -147,7 +147,7 @@ A comprehensive suite of solutions designed to revolutionize your transit operat
 </div>
 </div>
 </section>
-<section class="py-20 bg-gray-50">
+<section id="modes-section" class="py-20 bg-gray-50">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-16">
 <h2 class="text-3xl font-bold text-gray-900 mb-4">
@@ -321,7 +321,7 @@ Road
 </div>
 </div>
 </section>
-<section class="py-20">
+<section id="services-section" class="py-20">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-16">
 <h2 class="text-3xl font-bold text-gray-900 mb-4">
@@ -387,7 +387,7 @@ Contact Us
 </div>
 </div>
 </section>
-<section id="features" class="py-20 bg-gray-50">
+<section id="about-section" class="py-20 bg-gray-50">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-16">
 <h2 class="text-3xl font-bold text-gray-900 mb-4">
@@ -467,7 +467,7 @@ With over 20 years of combined expertise in transit technology and urban mobilit
 </div>
 </div>
 </section>
-<section class="py-20">
+<section id="testam-section" class="py-20">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-16">
 <h2 class="text-3xl font-bold text-gray-900 mb-4">
@@ -532,7 +532,7 @@ See how our partners are transforming urban mobility
 </div>
 </div>
 </section>
-<section class="py-20 bg-primary text-white">
+<section id="contact-section" class="py-20 bg-primary text-white">
 <div class="max-w-7xl mx-auto px-6 text-center">
 <h2 class="text-3xl font-bold mb-6">
 Ready to Transform Your Transit System?
@@ -599,37 +599,27 @@ Transforming urban mobility with intelligent transit solutions.
 </div>
 </footer>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-const header = document.querySelector('header');
-const mainTabs = document.querySelectorAll('.main-tab');
-const transitTabs = document.querySelectorAll('.transit-tab');
-const cargoTabs = document.querySelectorAll('.cargo-tab');
-const transitContents = document.querySelectorAll('.transit-content');
-const cargoContents = document.querySelectorAll('.cargo-content');
-const passengerTabsContainer = document.getElementById('passengers-tabs');
-const cargoTabsContainer = document.getElementById('cargo-tabs');
-window.addEventListener('scroll', () => {
-if (window.scrollY > 0) {
-header.classList.add('shadow-md');
-} else {
-header.classList.remove('shadow-md');
-}
-});
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-e.preventDefault();
-const targetId = this.getAttribute('href').substring(1);
-const targetElement = document.getElementById(targetId);
-if (targetElement) {
-const headerHeight = document.querySelector('header').offsetHeight;
-const elementPosition = targetElement.getBoundingClientRect().top;
-const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-window.scrollTo({
-top: offsetPosition,
-behavior: 'smooth'
-});
-}
-});
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = {
+        "products": "products-section",
+        "services": "services-section",
+        "about": "about-section",
+        "contact": "contact-section"
+    };
+
+    document.querySelectorAll("a[href^='#']").forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = navLinks[this.getAttribute("href").substring(1)];
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 50,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
 });
 mainTabs.forEach(tab => {
 tab.addEventListener('click', () => {
