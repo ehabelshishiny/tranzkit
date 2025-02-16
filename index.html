@@ -1,54 +1,686 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TranzKit - Mobility & Logistics Tech</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TranzKit - Smart Mobility Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#405DFF',
+secondary: '#64748B'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.gradient-bg {
+background: linear-gradient(135deg, #405DFF 0%, #6B82FF 100%);
+}
+.feature-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+.testimonial-card {
+transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+transform: scale(1.02);
+}
+</style>
 </head>
-<body>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <h1>Revolutionizing Mobility & Logistics Tech</h1>
-        <p>Expert-built solutions in record time</p>
-        <a href="#schedule" class="cta-btn">Schedule a Call</a>
-    </header>
-
-    <!-- About Us -->
-    <section id="about">
-        <h2>About TranzKit</h2>
-        <p>With 20+ years of expertise, we build mobility and logistics tech solutions at record speed.</p>
-    </section>
-
-    <!-- Services -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>🚚 ERP System Development</li>
-            <li>🚕 Mobility & Transportation Apps</li>
-            <li>📦 Logistics & Fleet Management</li>
-        </ul>
-    </section>
-
-    <!-- Why Bubble.io -->
-    <section id="bubble">
-        <h2>Why Bubble.io?</h2>
-        <p>Bubble.io enables rapid development of scalable apps without compromising quality.</p>
-    </section>
-
-    <!-- Appointment Booking -->
-    <section id="schedule">
-        <h2>Schedule a Call</h2>
-        <p>Let’s discuss how we can build your next big idea.</p>
-        <iframe src="https://calendly.com/your-link" frameborder="0"></iframe>
-    </section>
-
-    <!-- Contact -->
-    <footer>
-        <p>Contact us at <a href="mailto:info@tranzkit.com">info@tranzkit.com</a></p>
-    </footer>
-
+<body class="font-['Inter'] antialiased">
+<header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+<div class="max-w-7xl mx-auto px-6 py-4">
+<nav class="flex items-center justify-between">
+<div class="flex items-center">
+<a href="#"><img src="https://static.readdy.ai/image/ba15933f63a492f2960f2a2094d5c071/9f7030f2b6cd3c500d584877e82fffcf.png" alt="TranzKit" class="h-8"></a>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#features" class="text-gray-600 hover:text-primary">Products</a>
+<a href="#solutions" class="text-gray-600 hover:text-primary">Services</a>
+<a href="#testimonials" class="text-gray-600 hover:text-primary">About us</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 whitespace-nowrap">
+Book a Demo
+</button>
+</div>
+</nav>
+</div>
+</header>
+<main>
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden" style="background-image: url('https://public.readdy.ai/ai/img_res/6c51044939083eb33b24c99e340c7ebb.jpg'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-white/95 to-white/50"></div>
+<div class="relative max-w-7xl mx-auto px-6 py-20">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<h1 class="text-5xl font-bold text-gray-900 mb-6">
+Smart Mobility, Simplified
+</h1>
+<p class="text-xl text-gray-600 mb-8">
+End-to-End Transit Solutions for a Seamless Future. Transform your city's mobility with intelligent, integrated transportation management.
+</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 whitespace-nowrap text-lg">
+Book a Demo
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="solutions" class="py-20">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">
+Products
+</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+A comprehensive suite of solutions designed to revolutionize your transit operations
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all feature-card">
+<img src="https://public.readdy.ai/ai/img_res/1cdba1fd10a9464abd27838051fe331a.jpg" alt="Operations Platform" class="w-full h-48 object-cover rounded-lg mb-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Operations Platform</h3>
+<p class="text-gray-600">A centralized dashboard for planning, monitoring, and optimizing transit services in real time.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all feature-card">
+<img src="https://public.readdy.ai/ai/img_res/959c540b774dc93812ca917fe6965da8.jpg" alt="Fleet Management" class="w-full h-48 object-cover rounded-lg mb-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Fleet Management</h3>
+<p class="text-gray-600">Automated scheduling, predictive maintenance, and live tracking ensure seamless fleet operations.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all feature-card">
+<img src="https://public.readdy.ai/ai/img_res/840347975bdc4da66a93c9a0fe584488.jpg" alt="Rider App" class="w-full h-48 object-cover rounded-lg mb-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Rider App</h3>
+<p class="text-gray-600">Plan trips, book rides, and track vehicles with ease through our intuitive mobile application.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all feature-card">
+<img src="https://public.readdy.ai/ai/img_res/1a9a9619cec7f2e3c9d46dd32d65ba17.jpg" alt="Driver App" class="w-full h-48 object-cover rounded-lg mb-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Driver App</h3>
+<p class="text-gray-600">Empower drivers with real-time navigation, passenger updates, and route optimization tools.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">
+Transit Models
+</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+One platform supporting every mode of transportation
+</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="flex flex-wrap gap-4 mb-6 justify-center">
+<button class="px-8 py-3 !rounded-full bg-primary text-white whitespace-nowrap main-tab active" data-main="passengers">
+Passengers
+</button>
+<button class="px-8 py-3 !rounded-full bg-gray-100 text-gray-600 whitespace-nowrap main-tab" data-main="cargo">
+Cargo
+</button>
+</div>
+<div id="passengers-tabs" class="flex flex-wrap gap-4 mb-6 justify-center">
+<button class="px-6 py-2 !rounded-full bg-primary text-white whitespace-nowrap transit-tab active" data-tab="fixed">
+Fixed Routes
+</button>
+<button class="px-6 py-2 !rounded-full bg-gray-100 text-gray-600 whitespace-nowrap transit-tab" data-tab="dynamic">
+Dynamic Transit
+</button>
+<button class="px-6 py-2 !rounded-full bg-gray-100 text-gray-600 whitespace-nowrap transit-tab" data-tab="demand">
+On-Demand
+</button>
+</div>
+<div id="cargo-tabs" class="flex flex-wrap gap-4 mb-6 justify-center hidden">
+<button class="px-6 py-2 !rounded-full bg-primary text-white whitespace-nowrap cargo-tab active" data-tab="sea">
+Sea
+</button>
+<button class="px-6 py-2 !rounded-full bg-gray-100 text-gray-600 whitespace-nowrap cargo-tab" data-tab="road">
+Road
+</button>
+</div>
+<div class="transit-content" id="fixed">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<h3 class="text-2xl font-semibold text-gray-900 mb-4">Fixed Routes</h3>
+<p class="text-gray-600 mb-6">Reliable, scheduled transit for daily commutes with real-time tracking and automated optimization.</p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Automated scheduling and dispatch</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Real-time vehicle tracking</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Passenger counting and analytics</span>
+</li>
+</ul>
+</div>
+<div>
+<img src="https://public.readdy.ai/ai/img_res/c445e2b8584949ec7383422ea21b6894.jpg" alt="Fixed Routes" class="w-full rounded-lg shadow-md">
+</div>
+</div>
+</div>
+<div class="transit-content hidden" id="dynamic">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<h3 class="text-2xl font-semibold text-gray-900 mb-4">Dynamic Transit</h3>
+<p class="text-gray-600 mb-6">Adaptive routes based on demand patterns, optimizing service delivery in real-time.</p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>AI-powered route optimization</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Demand prediction</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Real-time service adjustments</span>
+</li>
+</ul>
+</div>
+<div>
+<img src="https://public.readdy.ai/ai/img_res/22b159f9c48c2571c82b6e6c3a9f8420.jpg" alt="Dynamic Transit" class="w-full rounded-lg shadow-md">
+</div>
+</div>
+</div>
+<div class="transit-content hidden" id="demand">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<h3 class="text-2xl font-semibold text-gray-900 mb-4">On-Demand Mobility</h3>
+<p class="text-gray-600 mb-6">Instant, flexible transportation at your fingertips with smart matching and routing.</p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Instant booking and dispatch</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Smart vehicle matching</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Dynamic pricing</span>
+</li>
+</ul>
+</div>
+<div>
+<img src="https://public.readdy.ai/ai/img_res/6638c5215067a019968fcc95e8600089.jpg" alt="On-Demand Mobility" class="w-full rounded-lg shadow-md">
+</div>
+</div>
+</div>
+<div class="cargo-content hidden" id="sea">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<h3 class="text-2xl font-semibold text-gray-900 mb-4">Sea Logistics</h3>
+<p class="text-gray-600 mb-6">Advanced solutions for ocean and coastal cargo transportation management.</p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Real-time vessel tracking and routing</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Port operations optimization</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Container management system</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>International shipping documentation</span>
+</li>
+</ul>
+</div>
+<div>
+<img src="https://public.readdy.ai/ai/img_res/03dc6ee3a5d404ddfaef8a9fc972b065.jpg" alt="Maritime Logistics" class="w-full rounded-lg shadow-md">
+</div>
+</div>
+</div>
+<div class="cargo-content hidden" id="road">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<h3 class="text-2xl font-semibold text-gray-900 mb-4">Road Logistics</h3>
+<p class="text-gray-600 mb-6">Comprehensive solutions for first-mile, mid-mile, and last-mile delivery operations.</p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>First-mile pickup optimization</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Mid-mile route planning</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Last-mile delivery management</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Real-time fleet tracking</span>
+</li>
+</ul>
+</div>
+<div>
+<img src="https://public.readdy.ai/ai/img_res/5d8dfe73d15e2735c0b70688644a275c.jpg" alt="Road Logistics" class="w-full rounded-lg shadow-md">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">
+Our Services
+</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Flexible solutions tailored to your transit operation needs
+</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all">
+<img src="https://public.readdy.ai/ai/img_res/2b63dc23f7ff7ded7b5eb665f44c7d3b.jpg" alt="Software as a Service" class="w-full h-64 object-cover rounded-lg mb-6">
+<h3 class="text-2xl font-semibold text-gray-900 mb-4">Software as a Service</h3>
+<p class="text-gray-600 mb-6">Our cloud-based platform provides immediate access to comprehensive transit management tools with regular updates and continuous improvements.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Instant deployment and scalability</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Automatic updates and maintenance</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>24/7 technical support</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Pay-as-you-grow pricing model</span>
+</li>
+</ul>
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 whitespace-nowrap">
+Learn More
+</button>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all">
+<img src="https://public.readdy.ai/ai/img_res/976025181e79e8e32390468552f4ca4a.jpg" alt="Custom Development & Integrations" class="w-full h-64 object-cover rounded-lg mb-6">
+<h3 class="text-2xl font-semibold text-gray-900 mb-4">Custom Development & Integrations</h3>
+<p class="text-gray-600 mb-6">Tailored solutions designed to meet your specific requirements and seamlessly integrate with your existing systems.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Custom feature development</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Legacy system integration</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>API development and documentation</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary text-xl mr-2"></i>
+<span>Dedicated development team</span>
+</li>
+</ul>
+<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 whitespace-nowrap">
+Contact Us
+</button>
+</div>
+</div>
+</div>
+</section>
+<section id="features" class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">
+Why Choose TranzKit?
+</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Our comprehensive platform revolutionizes urban mobility management with cutting-edge technology and unmatched flexibility.
+</p>
+</div>
+<div class="mb-16">
+<div class="text-center">
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Our Expert Team</h3>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+With over 20 years of combined expertise in transit technology and urban mobility, our team brings unparalleled knowledge to every project.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+<i class="ri-code-box-line text-primary text-3xl"></i>
+</div>
+<h4 class="text-lg font-semibold text-center mb-2">Technical Excellence</h4>
+<p class="text-gray-600 text-center">Industry-leading engineers with deep transit tech expertise</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+<i class="ri-map-2-line text-primary text-3xl"></i>
+</div>
+<h4 class="text-lg font-semibold text-center mb-2">Domain Knowledge</h4>
+<p class="text-gray-600 text-center">Extensive experience in urban mobility and transportation</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+<i class="ri-team-line text-primary text-3xl"></i>
+</div>
+<h4 class="text-lg font-semibold text-center mb-2">Global Presence</h4>
+<p class="text-gray-600 text-center">Team members from leading transit organizations worldwide</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+<i class="ri-customer-service-2-line text-primary text-3xl"></i>
+</div>
+<h4 class="text-lg font-semibold text-center mb-2">Dedicated Support</h4>
+<p class="text-gray-600 text-center">24/7 expert assistance from our experienced team</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all feature-card">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-database-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">End-to-End Solution</h3>
+<p class="text-gray-600">One unified platform for complete transit management, from planning to execution.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all feature-card">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-scales-3-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Scalable & Flexible</h3>
+<p class="text-gray-600">Adaptable solutions that grow with your city, supporting fleets of any size.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all feature-card">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-brain-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">AI-Powered Insights</h3>
+<p class="text-gray-600">Advanced analytics and machine learning for optimized routes and operations.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all feature-card">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-plug-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Seamless Integration</h3>
+<p class="text-gray-600">Effortlessly connects with existing infrastructure and third-party services.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">
+Trusted by Leading Transit Agencies
+</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+See how our partners are transforming urban mobility
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-sm testimonial-card">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+<i class="ri-building-4-line text-2xl text-gray-600"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Metropolitan Transit Authority</h4>
+<p class="text-gray-600">New York City</p>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"TranzKit has revolutionized our transit operations, improving efficiency by 35% and reducing wait times significantly."</p>
+<div class="flex items-center">
+<div class="text-primary font-semibold">Sarah Thompson</div>
+<span class="mx-2 text-gray-300">|</span>
+<div class="text-gray-600">Operations Director</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm testimonial-card">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+<i class="ri-building-4-line text-2xl text-gray-600"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Bay Area Rapid Transit</h4>
+<p class="text-gray-600">San Francisco</p>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"The platform's flexibility and real-time insights have helped us optimize routes and reduce operational costs by 25%."</p>
+<div class="flex items-center">
+<div class="text-primary font-semibold">Michael Chen</div>
+<span class="mx-2 text-gray-300">|</span>
+<div class="text-gray-600">Technology Director</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm testimonial-card">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+<i class="ri-building-4-line text-2xl text-gray-600"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Transport for London</h4>
+<p class="text-gray-600">London</p>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"TranzKit's AI-powered insights have transformed how we manage our fleet and respond to changing demand patterns."</p>
+<div class="flex items-center">
+<div class="text-primary font-semibold">Emma Williams</div>
+<span class="mx-2 text-gray-300">|</span>
+<div class="text-gray-600">Innovation Lead</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-primary text-white">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<h2 class="text-3xl font-bold mb-6">
+Ready to Transform Your Transit System?
+</h2>
+<p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+Join leading cities worldwide in revolutionizing urban mobility with TranzKit's comprehensive platform.
+</p>
+<div class="flex flex-wrap gap-4 justify-center">
+<button class="bg-white text-primary px-8 py-3 !rounded-button hover:bg-gray-100 whitespace-nowrap text-lg font-semibold">
+Book a Demo
+</button>
+<button class="border border-white px-8 py-3 !rounded-button hover:bg-white/10 whitespace-nowrap text-lg font-semibold">
+Contact Sales
+</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-900 text-white py-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div>
+<a href="#"><img src="https://static.readdy.ai/image/ba15933f63a492f2960f2a2094d5c071/f55d5e784646f3dbdc239e322781c3fa.png" alt="TranzKit" class="h-8 mb-6"></a>
+<p class="text-gray-400">
+Transforming urban mobility with intelligent transit solutions.
+</p>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Products</h4>
+<ul class="space-y-2">
+<li><a href="#solutions" class="text-gray-400 hover:text-white">Operations Platform</a></li>
+<li><a href="#solutions" class="text-gray-400 hover:text-white">Fleet Management</a></li>
+<li><a href="#solutions" class="text-gray-400 hover:text-white">Rider App</a></li>
+<li><a href="#solutions" class="text-gray-400 hover:text-white">Driver App</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Services</h4>
+<ul class="space-y-2">
+<li><a href="#features" class="text-gray-400 hover:text-white">Software as a Service</a></li>
+<li><a href="#features" class="text-gray-400 hover:text-white">Custom Development & Integrations</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Company</h4>
+<ul class="space-y-2">
+<li><a href="#features" class="text-gray-400 hover:text-white">About Us</a></li>
+<li><a href="#testimonials" class="text-gray-400 hover:text-white">Success Stories</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Book a Demo</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Contact Sales</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm">
+© 2025 TranzKit. All rights reserved.
+</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const header = document.querySelector('header');
+const mainTabs = document.querySelectorAll('.main-tab');
+const transitTabs = document.querySelectorAll('.transit-tab');
+const cargoTabs = document.querySelectorAll('.cargo-tab');
+const transitContents = document.querySelectorAll('.transit-content');
+const cargoContents = document.querySelectorAll('.cargo-content');
+const passengerTabsContainer = document.getElementById('passengers-tabs');
+const cargoTabsContainer = document.getElementById('cargo-tabs');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 0) {
+header.classList.add('shadow-md');
+} else {
+header.classList.remove('shadow-md');
+}
+});
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const targetId = this.getAttribute('href').substring(1);
+const targetElement = document.getElementById(targetId);
+if (targetElement) {
+const headerHeight = document.querySelector('header').offsetHeight;
+const elementPosition = targetElement.getBoundingClientRect().top;
+const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+window.scrollTo({
+top: offsetPosition,
+behavior: 'smooth'
+});
+}
+});
+});
+mainTabs.forEach(tab => {
+tab.addEventListener('click', () => {
+const target = tab.dataset.main;
+mainTabs.forEach(t => {
+if (t === tab) {
+t.classList.add('bg-primary', 'text-white');
+t.classList.remove('bg-gray-100', 'text-gray-600');
+} else {
+t.classList.remove('bg-primary', 'text-white');
+t.classList.add('bg-gray-100', 'text-gray-600');
+}
+});
+if (target === 'passengers') {
+passengerTabsContainer.classList.remove('hidden');
+cargoTabsContainer.classList.add('hidden');
+document.querySelector('.transit-tab.active').click();
+} else {
+passengerTabsContainer.classList.add('hidden');
+cargoTabsContainer.classList.remove('hidden');
+document.querySelector('.cargo-tab.active').click();
+}
+});
+});
+transitTabs.forEach(tab => {
+tab.addEventListener('click', () => {
+const target = tab.dataset.tab;
+transitTabs.forEach(t => {
+if (t === tab) {
+t.classList.add('bg-primary', 'text-white');
+t.classList.remove('bg-gray-100', 'text-gray-600');
+} else {
+t.classList.remove('bg-primary', 'text-white');
+t.classList.add('bg-gray-100', 'text-gray-600');
+}
+});
+transitContents.forEach(content => {
+if (content.id === target) {
+content.classList.remove('hidden');
+} else {
+content.classList.add('hidden');
+}
+});
+cargoContents.forEach(content => {
+content.classList.add('hidden');
+});
+});
+});
+cargoTabs.forEach(tab => {
+tab.addEventListener('click', () => {
+const target = tab.dataset.tab;
+cargoTabs.forEach(t => {
+if (t === tab) {
+t.classList.add('bg-primary', 'text-white');
+t.classList.remove('bg-gray-100', 'text-gray-600');
+} else {
+t.classList.remove('bg-primary', 'text-white');
+t.classList.add('bg-gray-100', 'text-gray-600');
+}
+});
+cargoContents.forEach(content => {
+if (content.id === target) {
+content.classList.remove('hidden');
+} else {
+content.classList.add('hidden');
+}
+});
+transitContents.forEach(content => {
+content.classList.add('hidden');
+});
+});
+});
+});
+</script>
 </body>
 </html>
