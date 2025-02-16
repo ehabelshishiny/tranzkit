@@ -56,7 +56,7 @@
 <a href="#about" class="nav-link">About us</a>
 </div>
 <div class="flex items-center space-x-4">
-<button onclick="scrollToSection('contact')" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 whitespace-nowrap">
+<button id="bookDemoBtn" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 whitespace-nowrap">
 Book a Demo
 </button>
 </div>
@@ -76,7 +76,7 @@ Smart Mobility, Simplified
 End-to-End Transit Solutions for a Seamless Future. Transform your city's mobility with intelligent, integrated transportation management.
 </p>
 <div class="flex flex-wrap gap-4">
-<button onclick="scrollToSection('contact')" class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 whitespace-nowrap text-lg">
+<button id="bookDemoBtn" class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 whitespace-nowrap text-lg">
 Book a Demo
 </button>
 </div>
@@ -641,15 +641,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-    function scrollToSection(id) {
-    const section = document.getElementById(id);
-    if (section) {
-        window.scrollTo({
-            top: section.offsetTop - 50,
-            behavior: "smooth"
-        });
-    }
-}
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("bookDemoBtn").addEventListener("click", function() {
+        const contactSection = document.getElementById("contact");
+        if (contactSection) {
+            window.scrollTo({
+                top: contactSection.offsetTop - 50,
+                behavior: "smooth"
+            });
+        }
+    });
+});
 </script>
 </body>
 </html>
